@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sighn up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="art_style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+            background-size: cover;
+        }
+
+        .signup-container {
+            max-width: 500px;
+            margin: 130px auto;
+            padding: 30px;
+            background: linear-gradient(black,grey,);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+
+        .signup-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .signup-container .form-group {
+            position: relative;
+        }
+
+        .signup-container .form-control {
+            padding-left: 45px;
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            color: grey;
+        }
+        .signup-container .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5); /* Change this color as needed */
+    opacity: 1; /* Ensure the opacity is set to 1 for better visibility */
+}
+
+        .signup-container .form-control:focus {
+            background: whitesmoke;
+        }
+
+        .signup-container .input-group-text {
+            background: rgb(39, 38, 38);
+            border: none;
+            color: white;
+        }
+
+        .signup-container i {
+            color: #ffffff;
+        }
+
+        .signup-container .btn-primary {
+            background-color: #ffffff;
+            color: black;
+            border: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .signup-container .btn-primary:hover {
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        .signup-container .form-group label {
+            color: white;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        @media (max-width: 767px) {
+    footer ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+
+    .footer-logo {
+        margin-top: 30px;
+    }
+
+    .footer-logo img {
+        max-width: 100px; /* Reduce the logo size on small screens */
+    }
+}
+    </style>
+</head>
+<body>
+    <header id="hd" class="hd">
+        <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">SignUP</a></li>
+        </ul>
+        <a href="index.html"><img class="logo" src="victim_logo-removebg-preview (1).png" alt="Logo"></a>
+    </header>
+    <div class="container">
+        <div class="signup-container">
+            <h2>Create an Account</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="name"><i class="fas fa-user"></i> Full Name</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your full name">
+                    </div>
+                    <small id="nameError" class="error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        </div>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+                    <small id="emailError" class="error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                        </div>
+                        <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+                    </div>
+                    <small id="phoneError" class="error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob"><i class="fas fa-calendar-alt"></i> Date of Birth</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                        </div>
+                        <input type="date" class="form-control" id="dob" placeholder="Enter your date of birth">
+                    </div>
+                    <small id="dobError" class="error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password"><i class="fas fa-lock"></i> Password</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        </div>
+                        <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                    </div>
+                    <small id="passwordError" class="error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword"><i class="fas fa-lock"></i> Confirm Password</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        </div>
+                        <input type="password" class="form-control" id="confirmPassword"
+                            placeholder="Confirm your password">
+                    </div>
+                    <small id="confirmPasswordError" class="error"></small>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBMag9ygjt62AMdS0C97LcZudJF3T7VsHY",
+            authDomain: "shopease-85b7c.firebaseapp.com",
+            projectId: "shopease-85b7c",
+            storageBucket: "shopease-85b7c.appspot.com",
+            messagingSenderId: "390369204673",
+            appId: "1:390369204673:web:fd6dfc7c2ef7dfcb20b740",
+            databaseURL: "https://shopease-85b7c-default-rtdb.firebaseio.com" // Add your Realtime Database URL
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const db = getDatabase(app); // Initialize Realtime Database
+
+        document.getElementById('signupForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Clear previous error messages
+            clearErrors();
+
+            let isValid = true;
+
+            const name = document.getElementById('name').value.trim();
+            if (name === '') {
+                document.getElementById('nameError').textContent = 'Please enter your full name';
+                isValid = false;
+            }
+
+            const email = document.getElementById('email').value.trim();
+            if (email === '') {
+                document.getElementById('emailError').textContent = 'Please enter your email';
+                isValid = false;
+            } else if (!validateEmail(email)) {
+                document.getElementById('emailError').textContent = 'Invalid email format';
+                isValid = false;
+            }
+
+            const phone = document.getElementById('phone').value.trim();
+            if (phone === '') {
+                document.getElementById('phoneError').textContent = 'Please enter your phone number';
+                isValid = false;
+            } else if (!validatePhone(phone)) {
+                document.getElementById('phoneError').textContent = 'Invalid phone number format';
+                isValid = false;
+            }
+
+            const dob = document.getElementById('dob').value;
+            if (dob === '') {
+                document.getElementById('dobError').textContent = 'Please enter your date of birth';
+                isValid = false;
+            } else if (!isAtLeast18(dob)) {
+                document.getElementById('dobError').textContent = 'You must be at least 18 years old';
+                isValid = false;
+            }
+
+            const password = document.getElementById('password').value;
+            if (password === '') {
+                document.getElementById('passwordError').textContent = 'Please enter your password';
+                isValid = false;
+            } else if (password.length < 6) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters long';
+                isValid = false;
+            }
+
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            if (confirmPassword === '') {
+                document.getElementById('confirmPasswordError').textContent = 'Please confirm your password';
+                isValid = false;
+            } else if (confirmPassword !== password) {
+                document.getElementById('confirmPasswordError').textContent = 'Passwords do not match';
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Create user with email and password
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                        // Signed up 
+                        const user = userCredential.user;
+
+                        // Store additional user info in Realtime Database
+                        const userData = {
+                            name: name,
+                            email: email,
+                            phone: phone,
+                            dob: dob,
+                        };
+
+                        // Set user data in Realtime Database
+                        return set(ref(db, "users/" + user.uid), userData);
+                    })
+                    .then(() => {
+                        // Redirect to login page after storing data
+                        window.location.href = 'login.html';
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        // Display error message to the user
+                        document.getElementById('emailError').textContent = errorMessage;
+                        console.error("Error during signup: ", error);
+                    });
+            }
+
+        });
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        function validatePhone(phone) {
+            const re = /^\+?\d{10}$/;
+            return re.test(phone);
+        }
+
+        function isAtLeast18(dob) {
+            const today = new Date();
+            const birthDate = new Date(dob);
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            return age >= 18;
+        }
+
+        function clearErrors() {
+            document.getElementById('nameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('phoneError').textContent = '';
+            document.getElementById('dobError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+            document.getElementById('confirmPasswordError').textContent = '';
+        }
+    </script>
+
+    <footer>
+        <ul>
+            <li><a href="">Provider</a></li>
+            <li><a href="">Settings</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Privacy</a></li>
+            <li><a href="">Social Media</a></li>
+        </ul>
+        <div class="footer-logo">
+            <a href="#hd"><img src="victim_logo-removebg-preview (1).png" alt="Footer Logo"></a>
+        </div>
+    </footer>
+
+  
+</body>
+</html>

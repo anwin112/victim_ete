@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="art_style.css">
+    <style>
+          /* Basic Styling */
+          body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 150px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: grey;
+            font-family: 'Helvetica', sans-serif;
+            letter-spacing: 1.2px;
+            font-size: 2em;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: grey;
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Filter Dropdown */
+        .filter {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filter select {
+            padding: 10px;
+            font-size: 1em;
+            border: 2px solid grey;
+            border-radius: 5px;
+            outline: none;
+            cursor: pointer;
+            background-color: white;
+        }
+
+        /* Grid and Cards */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .col-4 {
+            flex: 1 1 25%;
+            max-width: 25%;
+            box-sizing: border-box;
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .col-4 img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+
+        .col-4:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .col-4 h4 {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .col-4 .rating {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .col-4 .rating i {
+            color: #f7ca18;
+        }
+
+        .col-4 p {
+            text-align: center;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Like Button */
+        .like-btn {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .like-btn i {
+            font-size: 24px;
+            color: #888;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .like-btn i.liked {
+            color: grey;
+        }
+
+        /* Quantity Controls */
+        .quantity {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .quantity button {
+            padding: 5px 10px;
+            background-color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .quantity input {
+            width: 40px;
+            text-align: center;
+            margin: 0 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Add to Cart Button Styling */
+        .add-to-cart {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: grey;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: rgb(41, 39, 39);
+        }
+
+        /* Shopping Cart Section */
+        h2.cart-title {
+            font-size: 1.8em;
+            color: #333;
+            margin-top: 50px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .cart-item span {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .cart-item button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .total {
+            text-align: right;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        #clear-cart {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0 auto;
+            transition: background-color 0.3s ease;
+        }
+
+        #clear-cart:hover {
+            background-color: grey;
+        }
+
+        /* Pagination */
+        .page-btn {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .page-btn span {
+            display: inline-block;
+            margin: 0 5px;
+            padding: 8px 16px;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .page-btn span.active {
+            background-color: black;
+            color: white;
+        }
+
+        .page-btn span:hover {
+            background-color: grey;
+        }
+        @media (max-width: 767px) {
+    footer ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+
+    .footer-logo {
+        margin-top: 30px;
+    }
+
+    .footer-logo img {
+        max-width: 100px; /* Reduce the logo size on small screens */
+    }
+}
+    </style>
+</head>
+<body>
+    <header id="hd" class="hd">
+        <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">SignUP</a></li>
+        </ul>
+        <a href="index.html"><img class="logo" src="victim_logo-removebg-preview (1).png" alt="Logo"></a>
+    </header>
+
+
+    <div class="container">
+        <h2>Formal Collection</h2>
+
+      
+
+        <!-- Product Grid -->
+        <div class="row" id="product-container"></div>
+
+        <!-- Pagination -->
+        <div class="page-btn" id="pagination"></div>
+
+        <h2 class="cart-title">Shopping Cart</h2>
+        <div id="cart-container"></div>
+        <div class="total" id="total-amount"></div>
+        <button id="clear-cart" onclick="clearCart()">Clear Cart</button>
+        <a href="cart.html"><button id="clear-cart" >buy</button></a>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        const productsPerPage = 6;
+        let currentPage = 1;
+        let products = [];
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let filteredProducts = [];
+
+        // Fetch product data from JSON file
+        fetch('https://shakthivel1311.github.io/WSD---Lab-Exercise--7/products.json')
+            .then(response => response.json())
+            .then(data => {
+                products = data;
+                
+                filteredProducts = products.filter(product => product.category === 'formal');
+                currentPage = 1;
+                renderProducts();
+                renderCart();
+                renderPagination();
+            })
+            .catch(error => console.error('Error fetching products:', error));
+
+
+        // Function to filter products by category
+       
+
+        // Function to render products
+        function renderProducts() {
+            const start = (currentPage - 1) * productsPerPage;
+            const end = start + productsPerPage;
+            const visibleProducts = filteredProducts.slice(start, end);
+
+            const productContainer = document.getElementById('product-container');
+            productContainer.innerHTML = '';
+
+            visibleProducts.forEach(product => {
+                productContainer.innerHTML += `
+                    <div class="col-4">
+                        <img src="${product.image}" alt="${product.name}">
+                        <h4>${product.name}</h4>
+                        <div class="rating">
+                            ${renderStars(product.rating)}
+                        </div>
+                        <p>Price: ₹${product.price}</p>
+                        <div class="like-btn">
+                            <i class="fa fa-heart" onclick="toggleLike(this)"></i>
+                        </div>
+                        <div class="quantity">
+                            <button onclick="decreaseQuantity(${product.id})">-</button>
+                            <input type="number" id="quantity-${product.id}" value="1" min="1">
+                            <button onclick="increaseQuantity(${product.id})">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(${product.id})">Add to Cart</button>
+                    </div>
+                `;
+            });
+        }
+
+        // Render stars for rating
+        function renderStars(rating) {
+            let stars = '';
+            for (let i = 0; i < 5; i++) {
+                stars += `<i class="fa fa-star${i < rating ? '' : '-o'}"></i>`;
+            }
+            return stars;
+        }
+
+        // Pagination rendering
+        function renderPagination() {
+            const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+            const paginationContainer = document.getElementById('pagination');
+            paginationContainer.innerHTML = '';
+
+            for (let i = 1; i <= totalPages; i++) {
+                paginationContainer.innerHTML += `<span class="${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</span>`;
+            }
+        }
+
+        function goToPage(page) {
+            currentPage = page;
+            renderProducts();
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const quantityInput = document.getElementById(`quantity-${productId}`);
+            const quantity = parseInt(quantityInput.value);
+
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({ ...product, quantity });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        function renderCart() {
+            const cartContainer = document.getElementById('cart-container');
+            const totalAmountContainer = document.getElementById('total-amount');
+            cartContainer.innerHTML = '';
+
+            let totalAmount = 0;
+
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                totalAmount += itemTotal;
+
+                cartContainer.innerHTML += `
+                    <div class="cart-item">
+                        <span>${item.name} (${item.quantity})</span>
+                        <span>₹${itemTotal.toFixed(2)}</span>
+                        <button onclick="removeFromCart(${item.id})">Remove</button>
+                    </div>
+                `;
+            });
+
+            totalAmountContainer.textContent = `Total: ₹${totalAmount.toFixed(2)}`;
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        function clearCart() {
+            cart = [];
+            localStorage.removeItem('cart');
+            renderCart();
+        }
+
+        function decreaseQuantity(productId) {
+            const input = document.getElementById(`quantity-${productId}`);
+            let quantity = parseInt(input.value);
+            if (quantity > 1) {
+                input.value = quantity - 1;
+            }
+        }
+
+        function increaseQuantity(productId) {
+            const input = document.getElementById(`quantity-${productId}`);
+            let quantity = parseInt(input.value);
+            input.value = quantity + 1;
+        }
+
+        function toggleLike(icon) {
+            icon.classList.toggle('liked');
+        }
+    </script>
+  
+
+    <footer>
+        <ul>
+            <li><a href="">Provider</a></li>
+            <li><a href="">Settings</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+            <li><a href="">Privacy</a></li>
+            <li><a href="">Social Media</a></li>
+        </ul>
+        <div class="footer-logo">
+            <a href="#hd"><img src="victim_logo-removebg-preview (1).png" alt="Footer Logo"></a>
+        </div>
+    </footer>
+
+    <!-- Google Maps API -->
+</body>
+</html>

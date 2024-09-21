@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            font-size: 16px; /* base font size */
+            scroll-behavior: smooth;
+        }
+        .hd ul
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 90%;
+            margin-top: 5px;;
+            margin-bottom: 0;
+            list-style:none;
+            animation: slideDow 1.5s forwards ease-out;
+            
+        }
+        .hd ul li a{
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease, color 0.3s ease;
+        } 
+        .hd ul  li a:hover{
+            color: white;
+            transform: scale(1.3);
+        }
+
+        header.hd {
+            background-color: black;
+            position: fixed;
+            z-index: 1000;
+            width: 100%;
+            top: 0;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar {
+            background-color: black;
+            margin-top: 60px; 
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: top 0.5s ease-in-out;
+            position: fixed;
+            z-index: 999; /* Slightly lower than the header */
+            animation: slideDow 0.6s forwards ease-out;
+        }
+        @keyframes slideDow {
+    0% {
+        transform: translatey(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translatey(0);
+        opacity: 1;
+    }
+    }
+
+        .navbar ul {
+            display: flex;
+            gap: 100px;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            animation: slide-in 1.5s forwards ease-out;
+        }
+        /* Styles for small screens */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: block; /* Change to block for vertical list */
+        gap: 0; /* Remove horizontal gap */
+    }
+
+    .navbar ul li {
+        margin: 10px 0; /* Add vertical spacing between items */
+    }
+}
+        @keyframes slide-in {
+    0% {
+        transform: translatey(200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translatey(0);
+        opacity: 1;
+    }
+    }
+        .navbar ul li {
+            color: red;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: #ddd;
+        }
+
+        .navbar.hide {
+            top: -200px; /* Hide the navbar */
+        }
+
+        .navbar.show {
+            top: 60px; /* Show the navbar below the header */
+        }
+
+        .video-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .video-section video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        .content-section {
+            padding: 4.95rem 1.25rem; /* 60px and 20px converted to rem (16px base) */
+            background-color: #f4f4f4;
+        }
+
+        .content-section h1 {
+            text-align: center;
+            margin-bottom: 1.25rem; /* 20px converted to rem */
+        }
+
+        .content-section p {
+            text-align: center;
+            max-width: 37.5rem; /* 600px converted to rem */
+            margin: 0 auto;
+        }
+
+        header img {
+         
+            height: 80px;
+            z-index: 1000;
+            margin-bottom: 25px;
+            margin-top: -10px;
+            top: 0;
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 60%;
+            left: 5%;
+            color: white;
+            text-align: left;
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 0.625rem; /* 10px converted to rem */
+            animation: slide-left 1.5s forwards ease-out;
+        }
+        .overlay-text button
+        {
+            border:1px solid white;
+            border-radius: 20px;
+            background-color: white;
+            color: black;
+            font-size:medium;
+
+        }
+         
+    @keyframes slide-left {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    }
+
+        .overlay-text span {
+            text-align: left;
+            font-size: 1.25rem; /* 20px converted to rem */
+            font-weight: lighter;
+            transform: translate(-50%, -50%);
+        }
+#design
+{
+    scroll-behavior: smooth;
+}
+/* Design Features Section Styles */
+.design-features {
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    padding: 50px 0;
+   
+    justify-content: center;
+    align-items: center;
+}
+
+
+.feature-box {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-top: 50px;
+    height: 300px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.feature-box.one 
+{
+background: url(formal.webp) no-repeat center center;
+background-size: cover;
+}
+.feature-box.two
+{
+    background: url(mens-Casual-Wear.webp) no-repeat center center;
+background-size: cover;
+
+}
+.feature-box.three
+{
+    background: url(party_wear.jpg) no-repeat center center;
+background-size: cover;
+
+}
+.feature-box.four
+{
+    background: url(all.webp) no-repeat center center;
+background-size: cover;
+
+}
+
+.feature-box i {
+    color: #007bff;
+}
+
+.feature-box h3 {
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.feature-box p {
+    color: #6c757d;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+        footer {
+            background-color: black;
+            width: 100%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        footer ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 100px;
+            font-size: small;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ddd;
+        }
+
+        footer img {
+            padding-top: 20px;
+            width: 110px;
+            height: 130px;
+        }
+        @media (max-width: 767px) {
+    footer ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+
+    .footer-logo {
+        margin-top: 30px;
+    }
+
+    .footer-logo img {
+        max-width: 100px; /* Reduce the logo size on small screens */
+    }
+}
+    </style>
+</head>
+<body>
+<header id="hd" class="hd">
+    <ul>
+        <li><a href="login.html">login</a></li>
+        <li><a href="signup.html">SignUP</a></li>
+        
+    </ul>
+    <a href="index.html"><img class="logo" src="victim_logo-removebg-preview (1).png" height="50px" alt="Logo"></a>
+   
+</header>
+<div class="navbar show">
+    <ul>
+        <li class="nav-item active"><a href="about.html">About</a></li>
+        <li class="nav-item active"><a href="#design">Design</a></li>
+        <li class="nav-item active"><a href="product.html">Product Gallery</a></li>
+        <li class="nav-item active"><a href="cart.html">Cart</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+    </ul>
+</div>
+
+<div class="video-section">
+    <video src="bg_video.mp4" autoplay muted loop></video>
+    <div class="overlay-text">
+        MEN ARE GOOD IN SUITS.
+        <hr>
+        <A href="formal.html"><button>Discover more</button></A>
+        <br>
+        <span>The all-new FORMAL COLLECTIONS</span>
+    </div>
+</div>
+
+<div class="container content-section" id="design">
+  
+    <!-- Design Features Section -->
+    <section class="design-features bg-light py-5">
+        <div class="container">
+            <h1>GET YOUR DESIGNS</h1>
+            <div class="row text-center">
+                <!-- Feature Box 1 -->
+                <div class="col-md-6">
+                    <a href="formal.html" style="text-decoration: none;">
+                        <div class="feature-box one">
+                            <i class="fas fa-car fa-3x mb-3"></i>
+                            <h3>FORMAL</h3>
+                        </div>
+                    </a>
+                </div>
+                <!-- Feature Box 2 -->
+                <div class="col-md-6">
+                    <a href="casual.html" style="text-decoration: none;">
+                        <div class="feature-box two">
+                            <i class="fas fa-road fa-3x mb-3"></i>
+                            <h3>CASUAL</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+    
+            <div class="row text-center">
+                <!-- Feature Box 3 -->
+                <div class="col-md-6">
+                    <a href="partywear.html" style="text-decoration: none;">
+                        <div class="feature-box three">
+                            <i class="fas fa-road fa-3x mb-3"></i>
+                            <h3>PARTY WEAR</h3>
+                        </div>
+                    </a>
+                </div>
+                <!-- Feature Box 4 -->
+                <div class="col-md-6">
+                    <a href="generic.html" style="text-decoration: none;">
+                        <div class="feature-box four">
+                            <i class="fas fa-road fa-3x mb-3"></i>
+                            <h3>generic wear</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+</div>
+
+<footer>
+    <ul>
+        <li><a href="">Provider</a></li>
+        <li><a href="">Settings</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+        <li><a href="">Privacy</a></li>
+        <li><a href="">Social Media</a></li>
+    </ul>
+    <div class="footer-logo">
+        <a href="#hd"><img src="victim_logo-removebg-preview (1).png" alt="Footer Logo"></a>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                navbar.classList.remove('show');
+                navbar.classList.add('hide');
+            } else {
+                // Scrolling up
+                navbar.classList.remove('hide');
+                navbar.classList.add('show');
+            }
+            lastScrollTop = scrollTop;
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contacts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="art_style.css">
+
+    <style>
+         body {
+            background:white;
+            background-size: cover;
+        }
+
+        .main-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 150px;
+            margin-left: 80px;
+            margin-right: 80px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+        }
+
+        .map-container {
+            height: 400px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: grey;
+        }
+
+        .contact-form .form-control {
+            margin-bottom: 15px;
+        }
+
+        .contact-form button {
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: grey;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: rgb(44, 42, 42);
+        }
+
+        .btn-success {
+            background-color: grey;
+            border: none;
+        }
+
+        .btn-success:hover {
+            background-color: rgb(43, 42, 42);
+        }
+
+
+        footer {
+           
+            color: white;
+            padding: 40px 10px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        footer h5 {
+            color: #ff6f61;
+            font-size: 18px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .footer-link {
+            color: #ddd;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #ff6f61;
+            text-decoration: underline;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            color: white;
+            margin-right: 15px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: grey;
+            transform: scale(1.1);
+        }
+
+        .footer-divider {
+            border-color: rgba(255, 255, 255, 0.2);
+            margin: 20px 0;
+        }
+
+        footer p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .footer-container {
+            padding: 40px 20px;
+        }
+
+        .footer-link {
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            color: #ff6f61;
+        }
+
+        @media (max-width: 767px) {
+            footer .social-icons {
+                text-align: left;
+            }
+
+            footer .text-center {
+                text-align: left;
+            }
+        }
+    .social_media
+    {
+        position:absolute;
+        left: 80%;
+    }
+    .newsletter {
+    padding: 20px;
+    margin-top: 20px;
+    text-align: left; /* Align text to the left */
+    width: 30%; /* Ensure full width */
+
+}
+
+.newsletter h5 {
+    color: #ff6f61; /* Keep the heading color */
+    margin-bottom: 15px;
+}
+
+.newsletter .form-group {
+    display: flex; /* Use flex for responsiveness */
+    justify-content: flex-start; /* Align items to the left */
+}
+
+.newsletter .form-control {
+    flex: 1; /* Allow input to grow */
+    min-width: 200px; /* Set a minimum width */
+    margin-right: 10px; /* Space between input and button */
+}
+
+.newsletter button {
+    flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+@media (max-width: 767px) {
+    .newsletter .form-group {
+        flex-direction: column; /* Stack input and button on small screens */
+    }
+
+    .newsletter .form-control {
+        margin-right: 0; /* Remove right margin on small screens */
+        margin-bottom: 10px; /* Add space below input */
+    }
+}
+@media (max-width: 767px) {
+    footer ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+
+    .footer-logo {
+        margin-top: 30px;
+    }
+
+    .footer-logo img {
+        max-width: 100px; /* Reduce the logo size on small screens */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header id="hd" class="hd">
+        <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">SignUP</a></li>
+        </ul>
+        <a href="index.html"><img class="logo" src="victim_logo-removebg-preview (1).png" alt="Logo"></a>
+    </header>
+    <div class="main-container mt-20">
+        <h2><i class="fas fa-phone"></i> Contact Us</h2>
+        <p>Need help with your order or have a question about our products? We're here to assist you!</p>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h4><i class="fas fa-map-marker-alt"></i> Our Address</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-building"></i> ShopEase HQ</p>
+                    <p><i class="fas fa-map-marked-alt"></i> No:52/7, 18th Cross Road</p>
+                    <p>Margosa Rd, next to Margosa Court, Malleshwaram, Bengaluru, Karnataka 560003</p>
+                    <p><i class="fas fa-envelope"></i> Email: shakthivel@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> Phone: 7868929771</p>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h4><i class="fas fa-map"></i> Find Us on the Map</h4>
+                <div id="map" class="map-container"></div>
+                <p>Timestamp: <span id="timestamp"></span></p>
+                <p>Latitude: <span id="latitude"></span></p>
+                <p>Longitude: <span id="longitude"></span></p>
+                <p>Accuracy: <span id="accuracy"></span></p>
+                <button id="clickme" class="btn btn-primary">Click Here to Get Location</button>
+                <div id="errorArea" class="alert d-none"></div>
+                <a id="navigationLink" href="#" target="_blank" class="btn btn-success d-none">Navigate to
+                    Destination</a>
+            </div>
+        </div>
+
+        <h4 class="mt-5"><i class="fas fa-envelope-open-text"></i> Send Us a Message</h4>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name"><i class="fas fa-user"></i> Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="order-id"><i class="fas fa-receipt"></i> Order ID (optional):</label>
+                <input type="text" class="form-control" id="order-id" placeholder="Enter your order ID">
+            </div>
+            <div class="form-group">
+                <label for="message"><i class="fas fa-comment"></i> Message:</label>
+                <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send</button>
+        </form>
+    </div>
+
+
+    <footer>
+
+        
+        <ul>
+            <li><a href="">Provider</a></li>
+            <li><a href="">Settings</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Privacy</a></li>
+            <li><a href="">Social Media</a></li>
+        </ul>
+
+        <div class="newsletter">
+            <h5 class="font-weight-bold text-uppercase">Newsletter</h5>
+            <p>Subscribe to our newsletter for the latest updates and offers!</p>
+            <form>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </div>
+            </form>
+        </div>
+        
+        
+       
+        <div class="footer-logo">
+            <a href="#hd"><img src="victim_logo-removebg-preview (1).png" alt="Footer Logo"></a>
+        </div>
+
+        
+    </footer>
+
+  
+
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        const destinationLat = 13.005459;
+        const destinationLng = 77.569199;
+        const navigationLink = document.getElementById("navigationLink");
+
+        let getloc = document.getElementById("clickme");
+        getloc.addEventListener('click', event => {
+            if ('geolocation' in navigator) {
+                navigator.geolocation.getCurrentPosition(pos => {
+                    const currentLat = pos.coords.latitude;
+                    const currentLng = pos.coords.longitude;
+
+                    document.getElementById("timestamp").innerText = new Date(pos.timestamp);
+                    document.getElementById("latitude").innerText = currentLat;
+                    document.getElementById("longitude").innerText = currentLng;
+                    document.getElementById("accuracy").innerText = pos.coords.accuracy;
+
+                    const map = L.map('map').setView([currentLat, currentLng], 13);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    }).addTo(map);
+
+                    L.marker([currentLat, currentLng]).addTo(map)
+                        .bindPopup('You are here')
+                        .openPopup();
+
+                    L.marker([destinationLat, destinationLng]).addTo(map)
+                        .bindPopup('Destination')
+                        .openPopup();
+
+                    document.getElementById("map").classList.remove("d-none");
+
+                    navigationLink.href = `https://www.google.com/maps/dir/?api=1&origin=${currentLat},${currentLng}&destination=${destinationLat},${destinationLng}`;
+                    navigationLink.classList.remove("d-none");
+
+                }, error => {
+                    let msg = "";
+                    switch (error.code) {
+                        case error.PERMISSION_DENIED:
+                            msg = "User Denied Permission";
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            msg = "Can't Locate User's Position";
+                            break;
+                        case error.TIMEOUT:
+                            msg = "Time out";
+                            break;
+                    }
+                    let errorArea = document.getElementById("errorArea");
+                    errorArea.innerHTML = msg;
+                    errorArea.classList.remove("d-none");
+                })
+
+            } else {
+                console.log("Update your browser to get Geolocation Object");
+            }
+
+        })
+    </script>
+</body>
+</html>

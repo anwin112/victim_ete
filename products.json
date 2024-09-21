@@ -1,0 +1,164 @@
+[
+    {
+        "id": 1,
+        "name": "Floral Summer Dress",
+        "image": "https://i.pinimg.com/236x/77/85/d0/7785d0b7dfd01446ca1e122ed0ed2a73.jpg",
+        "price": 1200,
+        "rating": 4,
+        "category": "casual",
+        "description": "A beautiful floral summer dress perfect for warm weather outings."
+    },
+    {
+        "id": 2,
+        "name": "Elegant Evening Gown",
+        "image": "https://img.freepik.com/free-photo/young-businessman-standing-front-weathered-wall-leaning-modern-chair-holding-laptop-hand_23-2147937524.jpg?w=360&t=st=1726859481~exp=1726860081~hmac=d0e6407ef7f9f7a56e9e2cd30fd24fab87c781c062dcef6bdcdfb1319ce50f4a",
+        "price": 3500,
+        "rating": 5,
+        "category": "formal",
+        "description": "A stunning evening gown for formal events and gala nights."
+    },
+    {
+        "id": 3,
+        "name": "Casual Day Dress",
+        "image": "https://blog.g3fashion.com/wp-content/uploads/2021/06/mens-casual-wear-768x943.jpg",
+        "price": 950,
+        "rating": 3,
+        "category": "casual",
+        "description": "A comfy and light casual dress ideal for everyday wear."
+    },
+    {
+        "id": 4,
+        "name": "Party Sequin Dress",
+        "image": "https://medias.utsavfashion.com/media/catalog/product/cache/1/image/500x/040ec09b1e35df139433887a97daa66f/e/m/embroidered-velvet-kurta-set-in-black-v1-mxx929.jpg",
+        "price": 2700,
+        "rating": 4,
+        "category": "party",
+        "description": "Shine at the party with this glamorous sequin dress."
+    },
+    {
+        "id": 5,
+        "name": "Formal Business Dress",
+        "image": "https://d1fufvy4xao6k9.cloudfront.net/images/blog/posts/2023/10/hockerty_mens_business_casual_style_743a6931_9bdd_4b4c_b5ba_ee56d4bc2909.jpg",
+        "price": 1800,
+        "rating": 5,
+        "category": "formal",
+        "description": "A stylish yet professional dress perfect for business meetings."
+    },
+    {
+        "id": 6,
+        "name": "Cocktail Dress",
+        "image": "https://www.beyoung.in/blog/wp-content/uploads/2018/11/Suits-Formal-Cocktail-Party-Dress-for-Men-853x1024.jpg",
+        "price": 2200,
+        "rating": 4,
+        "category": "party",
+        "description": "A chic cocktail dress that is perfect for evening parties."
+    },
+    {
+        "id": 7,
+        "name": "Casual Maxi Dress",
+        "image": "https://i.pinimg.com/736x/37/aa/80/37aa803ae06ecc6097c5a790690d0dfe.jpg",
+        "price": 1600,
+        "rating": 4,
+        "category": "casual",
+        "description": "A flowy maxi dress, comfortable and stylish for any casual occasion."
+    },
+    {
+        "id": 8,
+        "name": "Formal Black Dress",
+        "image": "https://i.pinimg.com/550x/ac/c7/6c/acc76cd1480e0f573eb125cf02dfad76.jpg",
+        "price": 2500,
+        "rating": 5,
+        "category": "formal",
+        "description": "An elegant black dress suitable for formal dinners and events."
+    },
+    {
+        "id": 9,
+        "name": "Bohemian Beach Dress",
+        "image": "https://i.pinimg.com/736x/72/b0/4e/72b04e27a5a597a1e6c929c34a4386ab.jpg",
+        "price": 1800,
+        "rating": 4,
+        "category": "casual",
+        "description": "A light and airy dress perfect for beach outings."
+    },
+    {
+        "id": 10,
+        "name": "Sparkling Prom Dress",
+        "image": "https://i.pinimg.com/originals/d6/3d/30/d63d30c614a04f98a978baf39bc9730a.jpg",
+        "price": 3200,
+        "rating": 5,
+        "category": "party",
+        "description": "A sparkling prom dress for a night to remember."
+    },
+    {
+        "id": 11,
+        "name": "Vintage Lace Dress",
+        "image": "https://i.pinimg.com/736x/a8/fa/56/a8fa5607f3674a289e7d789c69a00eb0.jpg",
+        "price": 2800,
+        "rating": 4,
+        "category": "formal",
+        "description": "A vintage-inspired lace dress for a classic look."
+    },
+    {
+        "id": 12,
+        "name": "Summer Striped Dress",
+        "image": "https://m.media-amazon.com/images/I/41NCF9r0GAL._AC_SY1000_.jpg",
+        "price": 1500,
+        "rating": 3,
+        "category": "casual",
+        "description": "A fun striped dress perfect for summer outings."
+    },
+    {
+        "id": 13,
+        "name": "Men's Casual Shirt",
+        "image": "https://rukminim2.flixcart.com/image/850/1000/xif0q/shirt/i/y/j/s-lf-marmic-fab-original-imagqr8rnzw4gshv.jpeg?q=90&crop=false",
+        "price": 1200,
+        "rating": 4,
+        "category": "casual",
+        "description": "A stylish casual shirt for everyday wear."
+    },
+    {
+        "id": 14,
+        "name": "Men's Formal Suit",
+        "image": "https://www.suitsmen.co.uk/suit-images/info-1x/dijon-tailored-fit-jacket-1.jpg",
+        "price": 8000,
+        "rating": 5,
+        "category": "formal",
+        "description": "A tailored formal suit for business and events."
+    },
+    {
+        "id": 15,
+        "name": "Men's Summer Shorts",
+        "image": "https://i.pinimg.com/564x/c2/7b/e7/c27be75d85d917ece3e075d0484a7983.jpg",
+        "price": 1500,
+        "rating": 4,
+        "category": "casual",
+        "description": "Comfortable summer shorts for a relaxed day."
+    },
+    {
+        "id": 16,
+        "name": "Men's Casual Blazer",
+        "image": "https://m.media-amazon.com/images/I/41T9rRwBz1L._AC_.jpg",
+        "price": 3000,
+        "rating": 4,
+        "category": "formal",
+        "description": "A versatile blazer for smart-casual occasions."
+    },
+    {
+        "id": 17,
+        "name": "Men's Chinos",
+        "image": "https://bouvy.com/cdn/shop/files/unnamed_953.jpg?v=1721993172&width=2000",
+        "price": 1800,
+        "rating": 4,
+        "category": "casual",
+        "description": "Chic chinos for a polished casual look."
+    },
+    {
+        "id": 18,
+        "name": "Men's Sports Jacket",
+        "image": "https://assets.ajio.com/medias/sys_master/root/20240315/TJ1S/65f4602805ac7d77bbbad144/-1117Wx1400H-443004374-jetblack-MODEL.jpg",
+        "price": 3500,
+        "rating": 5,
+        "category": "formal",
+        "description": "A stylish sports jacket for formal occasions."
+    }
+]

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="art_style.css">
+    <style>
+        .about-section {
+            padding: 126px 20px;
+            background-color: #f8f9fa;
+        }
+        .about-section h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .about-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .team {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .team-member {
+            margin: 20px;
+            text-align: center;
+        }
+        #map {
+            width: calc(100% - 40px); /* Full width minus padding */
+            height: 400px;
+            margin: 40px auto; /* Center the map horizontally */
+            padding: 0 20px; /* Padding on the left and right */
+        }
+        @media (max-width: 767px) {
+    footer ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+
+    .footer-logo {
+        margin-top: 30px;
+    }
+
+    .footer-logo img {
+        max-width: 100px; /* Reduce the logo size on small screens */
+    }
+}
+    </style>
+</head>
+<body>
+    <header id="hd" class="hd">
+        <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">SignUP</a></li>
+        </ul>
+        <a href="index.html"><img class="logo" src="victim_logo-removebg-preview (1).png" alt="Logo"></a>
+    </header>
+
+    <div class="about-section">
+        <h1>About Us</h1>
+        <p>
+            Welcome to our clothing store! We specialize in offering a wide range of clothing that caters to various styles and occasions. Whether you are looking for formal attire or casual wear, we have something for everyone.
+        </p>
+        <p>
+            Our mission is to provide fashionable, high-quality apparel that helps people express their unique style. Visit us at our store or shop online for the latest trends!
+        </p>
+
+        <h2>Meet Our Team</h2>
+        <div class="team">
+            <div class="team-member">
+                <h3>Anwin</h3>
+                <p>Founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <h3>Jithu</h3>
+                <p>Creative Director</p>
+            </div>
+            <div class="team-member">
+                <h3>Shakthivel</h3>
+                <p>Marketing Specialist</p>
+            </div>
+        </div>
+
+        <h2>Our Shop Location</h2>
+        <div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.785689144026!2d77.61584107512202!3d12.921491387389223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1458e6baac69%3A0x1d02c77cc85211ed!2sMadiwala%2C%201st%20Stage%2C%20BTM%20Layout%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1726911064708!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div> <!-- Google Map displaying the shop location -->
+    </div>
+
+    <footer>
+        <ul>
+            <li><a href="">Provider</a></li>
+            <li><a href="">Settings</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+            <li><a href="">Privacy</a></li>
+            <li><a href="">Social Media</a></li>
+        </ul>
+        <div class="footer-logo">
+            <a href="#hd"><img src="victim_logo-removebg-preview (1).png" alt="Footer Logo"></a>
+        </div>
+    </footer>
+
+    <!-- Google Maps API -->
+</body>
+</html>
